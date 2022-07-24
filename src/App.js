@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
-import './App.css';
-import Home from './components/Home';
-import About from './components/About';
-import Navbar from './components/Navbar';
-import Error from './components/Error';
-import SingleCocktail from './components/SingleCocktail';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import About from "./components/About";
+import Navbar from "./components/Header";
+import Error from "./components/Error";
+import SingleCocktail from "./components/SingleCocktail";
 
 function App() {
   return (
@@ -14,10 +14,15 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            Home
+            <Home />
           </Route>
-          <Route exact path="/about">About</Route>
-          
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/cocktail/:id">
+            <SingleCocktail />
+          </Route>
+          <Route path="*"><Error/></Route>
         </Switch>
       </Router>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SingleCocktail = () => {
+function SingleCocktail(){
   return (
     <div>SingleCocktail</div>
   )

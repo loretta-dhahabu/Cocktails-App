@@ -1,8 +1,13 @@
 import React from 'react'
 
-export const About = () => {
+function About () {
   return (
-    <div>About</div>
-  )
+    <section className="about-section">
+      <h1>About Us Page</h1>
+      <p>
+        hellow there!
+      </p>
+    </section>
+  );
 }
 export default About;

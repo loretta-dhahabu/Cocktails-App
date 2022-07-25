@@ -7,11 +7,11 @@ const AppContext = React.createContext();
 
 function AppProvider({ children }) {
   const [loading, setLoading] = useState(true);
-  const [searchName, setSearchName] = useState("");
-  const [actualCocktail, setActualCocktail] = useState([]);
+  const [searchName, setSearchName] = useState("a");
+  const [cocktails, setCocktails] = useState([]);
   return (
     <AppContext.Provider
-      value={{ loading, searchName, actualCocktail, setSearchName }}
+      value={{ loading, searchName, cocktails, setSearchName }}
     >
       {children}
     </AppContext.Provider>
@@ -20,4 +20,4 @@ function AppProvider({ children }) {
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
-export { AppContext, AppProvider };
+export { AppContext, AppProvider } ;

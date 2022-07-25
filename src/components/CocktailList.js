@@ -5,11 +5,22 @@ import Cocktail from './Cocktail'
 
 function CocktailList ()
 {
-    const [ actualCocktail, loading ] = useGlobalContext();
-    
-     
+    const { cocktails, loading } = useGlobalContext();
+
+    if ( loading )
+    {
+        return <Loading/> 
+    }
+    if ( cocktails.length < 1 )
+    {
+        return (
+            <h2>
+                no cocktails matched your search criteria
+            </h2>
+        )
+    }
   return (
-    <div>CocktailList</div>
+    <div>CocktailList here</div>
   )
 }
 export default CocktailList;

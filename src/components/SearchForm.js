@@ -3,10 +3,11 @@ import {useGlobalContext} from "../components/AppContext"
 
 function SearchForm ()
 {
-    const { setSearchName } = useGlobalContext();
+  const { setSearchName } = useGlobalContext();
+  // console.log( setSearchName );
   return (
     <div>
-      <h2>SearchForm component</h2>
+      <h2>Search Form component</h2>
     </div>
   );
 }

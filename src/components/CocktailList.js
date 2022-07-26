@@ -6,7 +6,7 @@ import Cocktail from './Cocktail'
 function CocktailList ()
 {
     const { cocktails, loading } = useGlobalContext();
-    console.log(cocktails);
+    // console.log(cocktails);
 
     if ( loading )
     {

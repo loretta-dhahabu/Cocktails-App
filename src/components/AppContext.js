@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, createContext } from "react";
 import { useCallback } from "react";
 
 const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
-const AppContext = React.createContext();
+const AppContext = createContext();
 
 function AppProvider({ children }) {
   const [loading, setLoading] = useState(true);

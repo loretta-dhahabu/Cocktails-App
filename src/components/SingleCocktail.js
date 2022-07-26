@@ -75,7 +75,7 @@ function SingleCocktail() {
         Back To Home
       </Link>
       <h2 className="section-title">{name}</h2>
-      <img src={image} />
+      <img src={ image } alt={ name }/>
       <div className="drink-info">
         <p>
           <span className="drink-data">Name:</span>

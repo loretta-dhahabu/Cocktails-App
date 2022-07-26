@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useEffect} from 'react'
 import {useGlobalContext} from "../components/AppContext"
 
 function SearchForm ()
@@ -8,13 +8,23 @@ function SearchForm ()
 
   const searchValue = React.useRef( "" );
 
+  useEffect( () =>
+  {
+  searchValue.current.focus()
+  }, [] )
+
   function searchCocktail ()
   {
     setSearchName(searchValue.current.value)
   }
+
+  function handleSubmit (event)
+  {
+    event.preventDefault()
+  }
   return (
     <section>
-      <form className='search-form'>
+      <form className='search-form' onSubmit={handleSubmit}>
         <div className='form-controls'>
           <label id='form'>search your favourite cocktails here</label>
           <input type="text" id='name' ref={ searchValue } onChange={ searchCocktail } style={ {background:""}}/>

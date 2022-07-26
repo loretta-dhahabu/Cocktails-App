@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function Cocktail ({id,name,category,image,info,glass,instructions}) {
   return (
-    <article className='card-container'>
+    <article>
       <div className="img-container">
         <img src={image} alt="{name}" />
       </div>

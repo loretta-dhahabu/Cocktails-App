@@ -6,6 +6,7 @@ import About from "./components/About";
 import Navbar from "./components/Header";
 import Error from "./components/Error";
 import SingleCocktail from "./components/SingleCocktail";
+// import { AppContext, AppProvider } from "./components/AppContext";
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import { useParams, Link } from "react-router-dom";
 
-const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+const url = "http://localhost:3000/drinks";
 function SingleCocktail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);

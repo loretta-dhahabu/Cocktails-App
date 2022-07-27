@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 
-
-const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+// const url = "http://localhost:3000/drinks";
 
 const AppContext = createContext();
 
@@ -11,38 +10,38 @@ function AppProvider({ children }) {
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
-    fetch(`${url}${searchName}`)
+    fetch("http://localhost:3000/drinks")
       .then((response) => response.json())
       .then((data) => {
+        setCocktails(data);
         const { drinks } = data;
         if (drinks) {
-          const newCocktails = drinks.map((item) => {
-            const {
-              idDrink,
-              strDrink,
-              strCategory,
-              strDrinkThumb,
-              strAlcoholic,
-              strGlass,
-              strInstructions,
-            } = item;
-            return {
-              id: idDrink,
-              name: strDrink,
-              category: strCategory,
-              image: strDrinkThumb,
-              info: strAlcoholic,
-              glass: strGlass,
-              instructions: strInstructions,
-            };
-          } );
-          // console.log( cocktails );
-          // console.log(drinks);
-          setCocktails( newCocktails )
-          // console.log(newCocktails);
-        }
-        else
-        {
+            const newCocktails = drinks.map((item) => {
+              const {
+                idDrink,
+                strDrink,
+                strCategory,
+                strDrinkThumb,
+                strAlcoholic,
+                strGlass,
+                strInstructions,
+              } = item;
+              return {
+                id: idDrink,
+                name: strDrink,
+                category: strCategory,
+                image: strDrinkThumb,
+                info: strAlcoholic,
+                glass: strGlass,
+                instructions: strInstructions,
+              };
+            });
+            // console.log( cocktails );
+            // console.log(drinks);
+            setCocktails(newCocktails);
+            setLoading(false);
+            // console.log(newCocktails);
+        } else {
           setCocktails([]);
         }
         setLoading(false);

@@ -10,13 +10,14 @@ function SingleCocktail() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${url}${id}`)
+    fetch(`${url}`)
       .then((response) => response.json())
       .then((data) => {
-        const drinks = data;
+        // const drinks = data;
         // console.log(data);
-
-        if (data.drinks) {
+        if ( data )
+        {
+          console.log(data);
           const {
             strDrink: name,
             strDrinkThumb: image,
@@ -30,7 +31,7 @@ function SingleCocktail() {
             strIngredient4,
             strIngredient5,
             strIngredient6,
-          } = data.drinks[0];
+          } = data[0];
 
           const ingredients = [
             strIngredient1,

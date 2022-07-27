@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 
-// const url = "http://localhost:3000/drinks";
+const url = "http://localhost:3000/drinks";
 
 const AppContext = createContext();
 
@@ -10,13 +10,14 @@ function AppProvider({ children }) {
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/drinks")
-      .then((response) => response.json())
-      .then((data) => {
-        setCocktails(data);
-        const { drinks } = data;
-        if (drinks) {
-            const newCocktails = drinks.map((item) => {
+      fetch(`${url}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data);
+          // const { drinks } = data;
+          if (data) {
+            // console.log(data);
+            const newCocktails = data.map((item) => {
               const {
                 idDrink,
                 strDrink,
@@ -41,11 +42,11 @@ function AppProvider({ children }) {
             setCocktails(newCocktails);
             setLoading(false);
             // console.log(newCocktails);
-        } else {
-          setCocktails([]);
-        }
-        setLoading(false);
-      });
+          } else {
+            setCocktails([]);
+          }
+          setLoading(false);
+        });
   }, [searchName]);
 
   // if (data) {

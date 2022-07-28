@@ -6,9 +6,12 @@ import About from "./components/About";
 import Navbar from "./components/Header";
 import Error from "./components/Error";
 import SingleCocktail from "./components/SingleCocktail";
+
+
 // import { AppContext, AppProvider } from "./components/AppContext";
 
-function App() {
+function App ()
+{
   return (
     <div>
       <Router>
@@ -23,7 +26,9 @@ function App() {
           <Route path="/cocktail/:id">
             <SingleCocktail />
           </Route>
-          <Route path="*"><Error/></Route>
+          <Route path="*">
+            <Error />
+          </Route>
         </Switch>
       </Router>
     </div>

@@ -10,14 +10,14 @@ function SingleCocktail() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${url}`)
+    fetch( "http://localhost:3000/drinks"
+    )
       .then((response) => response.json())
       .then((data) => {
         // const drinks = data;
         // console.log(data);
-        if ( data )
-        {
-          console.log(data);
+        if (data) {
+          // console.log(data);
           const {
             strDrink: name,
             strDrinkThumb: image,
@@ -31,6 +31,7 @@ function SingleCocktail() {
             strIngredient4,
             strIngredient5,
             strIngredient6,
+            dateModified: datemodified,
           } = data[0];
 
           const ingredients = [
@@ -49,6 +50,7 @@ function SingleCocktail() {
             glass,
             instructions,
             ingredients,
+            datemodified,
           };
           setCocktail(newCocktail);
           // console.log( data.drinks );
@@ -67,7 +69,7 @@ function SingleCocktail() {
     return <h2 className="section-title">No Cocktail To Display</h2>;
   }
 
-  const { name, image, info, category, glass, instructions, ingredients } =
+  const { name, image, info, category, glass, instructions, ingredients, datemodified } =
     cocktail;
 
   return (
@@ -76,7 +78,7 @@ function SingleCocktail() {
         Back To Home
       </Link>
       <h2 className="section-title">{name}</h2>
-      <img src={ image } alt={ name }/>
+      <img src={image} alt={name} />
       <div className="drink-info">
         <p>
           <span className="drink-data">Name:</span>
@@ -100,11 +102,14 @@ function SingleCocktail() {
         </p>
         <p>
           <span className="drink-data">Ingredients:</span>
-          { ingredients.map( ( item, index ) =>
-          {
-            return item ? <span key={ index }>{ item }</span> : null;
+          {ingredients.map((item, index) => {
+            return item ? <span key={index}>{item}</span> : null;
             // console.log(item);
           })}
+        </p>
+        <p>
+          <span className="drink-data">Modification Date:</span>
+          {datemodified}
         </p>
       </div>
     </section>
@@ -112,29 +117,3 @@ function SingleCocktail() {
 }
 export default SingleCocktail;
 
-// useEffect(() => {
-//     fetch(`${url}${searchName}`)
-//       .then((response) => response.json())
-//       .then((data) => {
-//         const { drinks } = data;
-//         if (drinks) {
-//           const newCocktails = drinks.map((item) => {
-//             const {
-//               idDrink,
-//               strDrink,
-//               strCategory,
-//               strDrinkThumb,
-//               strAlcoholic,
-//               strGlass,
-//               strInstructions,
-//             } = item;
-//             return {
-//               id: idDrink,
-//               name: strDrink,
-//               category: strCategory,
-//               image: strDrinkThumb,
-//               info: strAlcoholic,
-//               glass: strGlass,
-//               instructions: strInstructions,
-//             };
-//           } );

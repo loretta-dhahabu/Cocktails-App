@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 import Loading from "./Loading";
 import Cocktail from "./Cocktail";
 
-function CocktailList() {
+function CocktailList({search}) {
   const { cocktails, loading } = useGlobalContext([]);
   // console.log(cocktails);
   if (loading) {
@@ -16,12 +16,17 @@ function CocktailList() {
       </h2>
     );
   }
+  const searchFilter = cocktails.filter( ( cocktail ) =>
+  {
+    if ( search == "" ) return true
+    return cocktail.name.includes(search)
+  })
   return (
     <section className="section">
       <h2 className="section-title">Cocktail List Here</h2>
 
       <div className="cocktais-center">
-        {cocktails.map((item, id) => {
+        {searchFilter.map((item, id) => {
           return <Cocktail key={id} {...item} />;
         })}
       </div>

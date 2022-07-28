@@ -2,13 +2,31 @@
   text-align: center;
 }
 
+.App .dark{
+  --font-color: rgb(255, 255, 255);
+  --background: rgb(50, 50, 50);
+  --background--light: rgb(80, 80, 80);
+  transition: all 0.3s;
+}
 .logo {
   height: 3.2em;
-  width:15em;
+  width:5em;
   margin-left: -4em;
   pointer-events: none;
+  border-radius: 50em;
+  animation: App-logo-spin infinite 5s linear;
+}
+.theme-btn{
+  background-color: rgb(237, 229, 13);
+  border-radius: 1.5em;
+  height: 2em;
+  width: 6em;
+  border: black solid 1px;
 }
 
+Nav.Link :hover{
+color: #476a2e;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -24,6 +42,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -118,6 +137,7 @@ img {
 Buttons 
 ======
 */
+
 .btn,
 .btn-white,
 .btn-primary {

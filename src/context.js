@@ -17,6 +17,7 @@ function AppProvider({ children }) {
           // const { drinks } = data;
           if (data) {
             // console.log(data);
+
             const newCocktails = data.map((item) => {
               const {
                 idDrink,

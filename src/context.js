@@ -41,7 +41,7 @@ function AppProvider({ children }) {
             // console.log( cocktails );
             // console.log(drinks);
             setCocktails(newCocktails);
-            setLoading(false);
+            setLoading(true);
             // console.log(newCocktails);
           } else {
             setCocktails([]);

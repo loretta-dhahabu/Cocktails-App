@@ -2,8 +2,8 @@ import React from 'react'
 
 function About () {
   return (
-    <section className="about-section">
-      <h1>About Us Page</h1>
+    <section className="section about-section">
+      <h1 className='section-title'>About Us Page</h1>
       <p>
         hellow there!
       </p>

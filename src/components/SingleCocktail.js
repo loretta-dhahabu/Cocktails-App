@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import { useParams, Link } from "react-router-dom";
 
-const url = "http://localhost:3000/drinks";
+// const url = "http://localhost:3000/drinks";
 function SingleCocktail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
@@ -10,8 +10,7 @@ function SingleCocktail() {
 
   useEffect(() => {
     setLoading(true);
-    fetch( "http://localhost:3000/drinks"
-    )
+    fetch("http://localhost:3000/drinks")
       .then((response) => response.json())
       .then((data) => {
         // const drinks = data;
@@ -69,8 +68,16 @@ function SingleCocktail() {
     return <h2 className="section-title">No Cocktail To Display</h2>;
   }
 
-  const { name, image, info, category, glass, instructions, ingredients, datemodified } =
-    cocktail;
+  const {
+    name,
+    image,
+    info,
+    category,
+    glass,
+    instructions,
+    ingredients,
+    datemodified,
+  } = cocktail;
 
   return (
     <section className="section cocktail-section">
@@ -78,42 +85,43 @@ function SingleCocktail() {
         Back To Home
       </Link>
       <h2 className="section-title">{name}</h2>
-      <img src={image} alt={name} />
-      <div className="drink-info">
-        <p>
-          <span className="drink-data">Name:</span>
-          {name}
-        </p>
-        <p>
-          <span className="drink-data">Info:</span>
-          {info}
-        </p>
-        <p>
-          <span className="drink-data">Category:</span>
-          {category}
-        </p>
-        <p>
-          <span className="drink-data">Glass:</span>
-          {glass}
-        </p>
-        <p>
-          <span className="drink-data">Instructions:</span>
-          {instructions}
-        </p>
-        <p>
-          <span className="drink-data">Ingredients:</span>
-          {ingredients.map((item, index) => {
-            return item ? <span key={index}>{item}</span> : null;
-            // console.log(item);
-          })}
-        </p>
-        <p>
-          <span className="drink-data">Modification Date:</span>
-          {datemodified}
-        </p>
+      <div className="drink">
+        <img src={image} alt={name} />
+        <div className="drink-info">
+          <p>
+            <span className="drink-data">Name:</span>
+            {name}
+          </p>
+          <p>
+            <span className="drink-data">Info:</span>
+            {info}
+          </p>
+          <p>
+            <span className="drink-data">Category:</span>
+            {category}
+          </p>
+          <p>
+            <span className="drink-data">Glass:</span>
+            {glass}
+          </p>
+          <p>
+            <span className="drink-data">Instructions:</span>
+            {instructions}
+          </p>
+          <p>
+            <span className="drink-data">Ingredients:</span>
+            {ingredients.map((item, index) => {
+              return item ? <span key={index}>{item}</span> : null;
+              // console.log(item);
+            })}
+          </p>
+          <p>
+            <span className="drink-data">Modification Date:</span>
+            {datemodified}
+          </p>
+        </div>
       </div>
     </section>
   );
 }
 export default SingleCocktail;
-

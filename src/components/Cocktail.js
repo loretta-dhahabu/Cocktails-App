@@ -2,9 +2,24 @@ import React from 'react'
 import { Link } from "react-router-dom"
 // import { Card } from 'react-bootstrap';
 
-function Cocktail ({id,name,category,image,info,glass,instructions}) {
+// const url = "http://localhost:3000/drinks";
+function Cocktail ( { id, name, category, image, info, glass, instructions, ingredients,onDeleteCocktail } )
+{
+  function handleDeleteCocktail() {
+    fetch(`http://localhost:3000/drinks/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type":"application/json"
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // onDeleteCocktail(id);
+      });
+  }
   return (
-    <article>
+    <article className='cocktail'>
       <div className="img-container">
         <img src={image} alt="{name}" />
       </div>
@@ -12,10 +27,13 @@ function Cocktail ({id,name,category,image,info,glass,instructions}) {
         <h3>{name}</h3>
         <h4>{glass}</h4>
         <p>{info}</p>
-        <Link
-          to={`/cocktail/${id}`}
-          className="btn btn-primary btn-details"
-        >Drink Details</Link>
+        <Link to={`/cocktail/${id}`}>
+          <button className="btn btn-primary ">View Cocktail</button>
+        </Link>
+        <br /><br/>
+        <button className=" btn delete-btn" onClick={handleDeleteCocktail} >
+          not interested
+        </button>
       </div>
     </article>
   );
@@ -31,4 +49,4 @@ export default Cocktail;
     //     <Card.Text>{glass}</Card.Text>
     //     <Card.Text>{info}</Card.Text>
     //   </Card.Body>
-    // </Card>
+    

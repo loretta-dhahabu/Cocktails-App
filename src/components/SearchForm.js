@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import {useGlobalContext} from "../context"
 
 function SearchForm ({searchCocktail, search})
@@ -28,37 +28,20 @@ function SearchForm ({searchCocktail, search})
   );
 }
 export default SearchForm;
-// // function SearchForm ()
-// // {
-// //   const { setSearchName } = useGlobalContext();
-// //   // console.log( setSearchName );
+// function SearchForm ()
+// {const { query, setQuery, error } = useGlobalContext()
+//   return (
+//     <form className='search-form' onSubmit={(e) => e.preventDefault()}>
+//       <h2>search movies</h2>
+//       <input
+//         type='text '
+//         className='form-input'
+//         value={query}
+//         onChange={(e) => setQuery(e.target.value)}
+//       />
+//       {error.show && <div className='error'>{error.msg}</div>}
+//     </form>
+//   )
+// }
 
-// //   // const [searchValue, setSearchValue] = useState("");
-
-// //   useEffect( () =>
-// //   {
-// //   // setSearchValue(true)
-// //   }, [setSearchName] )
-
-// //   // function searchCocktail ()
-// //   // {
-// //   //   setSearchName ( searchValue )
-    
-// //   // }
-
-// //   function handleSubmit (event)
-// //   {
-// //     event.preventDefault()
-// //   }
-// //   return (
-// //     <section>
-// //       <form className='search-form' onSubmit={handleSubmit}>
-// //         <div className='form-controls'>
-// //           <label id='form'>search for cocktails here</label>
-// //           <input type="text" id='name'  style={ {background:"aqua"}}/>
-// //         </div>
-// //      </form>
-// //     </section>
-// //   );
-// // }
-// // export default SearchForm;
+// export default SearchForm

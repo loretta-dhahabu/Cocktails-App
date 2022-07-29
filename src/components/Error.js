@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 function Error(){
   return (
-    <section className="error-section">
+    <section className="section error-page">
       <div className="error-container">
         <h1>Ooops! You are caught up!</h1>
         <Link to= "/" className="btn-home">

@@ -23,7 +23,10 @@ I used HTML for laying out the structure of the app
 The CSS was used to style the web pages
 React was used to create interactive UI. Design simple views for each state in my application, and efficiently update and render just the right components when my data changes.
 
-
+## Architecture Design
+https://www.figma.com/file/AYHNEyBtCKsLSXdXxxucZV/Cocktails?node-id=0%3A1https://www.figma.com/file/AYHNEyBtCKsLSXdXxxucZV/Cocktails?node-id=0%3A1
+## Project Blog 
+https://medium.com/@loreydjefwa/cocktails-project-e8b365b4bf3d
 ## License 
 ### MIT License
 

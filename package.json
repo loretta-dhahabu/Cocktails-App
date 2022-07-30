@@ -21,7 +21,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json"
-   
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +39,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This is a Cocktail Application  that displays different varieties of Cocktails and their details i.e from name to being alcoholic or non-alcoholic,the ingredients used,glass used and the date the cocktail was modified.  It allows the user to such for there preferred drink on the search area as it filters the cocktails by name. It also gives the users a permission to delete any cocktail they are not interested in though this option is somehow destructive since it will delete the coktail permanently. Therefore I urge users to delete with caution. The app again allows users to leave their comments after viewing or using the cocktail. ## Features A user will be able to:  1. Search cocktail by name 2. Render/Display a list of cocktails. 3. Delete cocktails 4. Click on View cocktail button to see the details of the specific selected cocktail. 5. Add a comment on the comment section",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loretta-dhahabu/Cocktails-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loretta-dhahabu/Cocktails-App/issues"
+  },
+  "homepage": "https://github.com/loretta-dhahabu/Cocktails-App#readme"
 }

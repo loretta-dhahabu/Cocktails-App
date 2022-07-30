@@ -4,12 +4,14 @@ This is a Cocktail Application  that displays different varieties of Cocktails a
 It allows the user to such for there preferred drink on the search area as it filters the cocktails by name.
 It also gives the users a permission to delete any cocktail they are not interested in though this option is somehow destructive since it will delete the coktail permanently.
 Therefore I urge users to delete with caution.
+The app again allows users to leave their comments after viewing or using the cocktail.
 ## Features
 A user will be able to: 
 1. Search cocktail by name
 2. Render/Display a list of cocktails.
 3. Delete cocktails
-4. Click on VIew cocktail button to see the details of the specific selected cocktail.
+4. Click on View cocktail button to see the details of the specific selected cocktail.
+5. Add a comment on the comment section
 
 ## Requirements
 * Access to a computing device

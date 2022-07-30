@@ -3,10 +3,14 @@ import Loading from "./Loading";
 import { useParams, Link } from "react-router-dom";
 
 // const url = "http://localhost:3000/drinks";
-function SingleCocktail() {
+function SingleCocktail({ onAddComment }) {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
-  const [cocktail, setCocktail] = useState(null);
+  const [ cocktail, setCocktail ] = useState( null );
+  const [addCommentData, setAddCommentData] = useState({
+    comment: "",
+    author: "",
+  });
 
   useEffect(() => {
     setLoading(true);
@@ -67,7 +71,6 @@ function SingleCocktail() {
   if (!cocktail) {
     return <h2 className="section-title">No Cocktail To Display</h2>;
   }
-
   const {
     name,
     image,
@@ -78,7 +81,39 @@ function SingleCocktail() {
     ingredients,
     datemodified,
   } = cocktail;
+  
+  function handleChange ( event )
+  {
+      // console.log(event);
+      setAddCommentData({
+        ...addCommentData,
+        [event.target.name]: event.target.value,
+      });
+    }
+    function handleSubmit(event) {
+      event.preventDefault();
 
+      fetch("http://localhost:3000/drinks", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          comment: addCommentData.comment,
+          author: addCommentData.author,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setAddCommentData({
+            ...addCommentData,
+            comment: "",
+            author: "",
+          });
+        });
+    }
+  
   return (
     <section className="section cocktail-section">
       <Link to="/" className="btn btn-primary">
@@ -120,6 +155,23 @@ function SingleCocktail() {
             {datemodified}
           </p>
         </div>
+        <form className="new-comment-form" onSubmit={handleSubmit}>
+          <textarea
+            onChange={handleChange}
+            value={addCommentData.comment}
+            name="comment"
+            placeholder="Write your comment here..."
+            rows={10}
+          />
+          <input
+            onChange={handleChange}
+            value={addCommentData.author}
+            name="author"
+            placeholder="Author"
+          />
+
+          <input type="submit" value="Share your masterpiece" />
+        </form>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import React from 'react'
 
 function SearchForm ({searchCocktail, search})
 {
-    // const { } = useGlobalContext();
+    // const { searchName} = useGlobalContext();
 
 
   function handleSubmit (event)

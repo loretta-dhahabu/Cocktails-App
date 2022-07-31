@@ -30,7 +30,7 @@ function CocktailList({ search }) {
   const searchFilter = cocktails.filter((cocktail) => {
     if (search === "a") return true;
 
-    return cocktail.name.includes(search);
+    return cocktail?.name?.includes(search);
   });
   
   return (
@@ -40,7 +40,7 @@ function CocktailList({ search }) {
       <div className="cocktais-center">
         {searchFilter.map((item, id) => {
           return (
-            <Cocktail key={ id } { ...item } />
+            <Cocktail key={ id || item } { ...item } />
           );
         } ) }
         {listOfCocktails}

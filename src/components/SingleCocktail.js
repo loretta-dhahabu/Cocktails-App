@@ -14,7 +14,7 @@ function SingleCocktail({ onAddComment }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3000/drinks")
+    fetch("https://cocktailsjson.herokuapp.com/drinks")
       .then((response) => response.json())
       .then((data) => {
         // const drinks = data;

@@ -28,7 +28,7 @@ function AppProvider({ children }) {
                 strGlass,
                 strInstructions,
               } = item;
-              return {
+              return( {
                 id: idDrink,
                 name: strDrink,
                 category: strCategory,
@@ -36,7 +36,7 @@ function AppProvider({ children }) {
                 info: strAlcoholic,
                 glass: strGlass,
                 instructions: strInstructions,
-              };
+              });
             });
             // console.log( cocktails );
             // console.log(drinks);
@@ -48,7 +48,7 @@ function AppProvider({ children }) {
           }
           setLoading(false);
         });
-  }, [searchName]);
+  }, []);
 
   // if (data) {
   //   const newCocktails = data.map((item) => {

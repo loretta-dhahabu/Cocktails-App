@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 
-// const url = "http://localhost:3000/drinks";
-const url = " https://cocktaildrinks.herokuapp.com/drinks ";
+const url = "http://localhost:3000/drinks";
+
 const AppContext = createContext();
 
 function AppProvider({ children }) {

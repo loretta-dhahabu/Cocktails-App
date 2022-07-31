@@ -28,7 +28,7 @@ function CocktailList({ search }) {
     );
   }
   const searchFilter = cocktails.filter((cocktail) => {
-    if (search == "a") return true;
+    if (search === "a") return true;
 
     return cocktail.name.includes(search);
   });

@@ -1,9 +1,9 @@
 import React from 'react'
-import {useGlobalContext} from "../context"
+// import {useGlobalContext} from "../context"
 
 function SearchForm ({searchCocktail, search})
 {
-    const { setSearchName } = useGlobalContext();
+    // const { } = useGlobalContext();
 
 
   function handleSubmit (event)

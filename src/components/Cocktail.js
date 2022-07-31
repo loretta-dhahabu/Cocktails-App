@@ -6,11 +6,11 @@ import { Link } from "react-router-dom"
 function Cocktail ( { id, name, category, image, info, glass, instructions, ingredients,onDeleteCocktail } )
 {
   function handleDeleteCocktail() {
-    fetch(`http://localhost:3000/drinks/${id}`, {
+    fetch(`https://cocktailsjson.herokuapp.com/drinks/${id}`, {
       method: "DELETE",
       headers: {
-        "Content-Type":"application/json"
-      }
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => response.json())
       .then((data) => {

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
 
-const url = "http://localhost:3000/drinks";
+const url = "https://cocktailsjson.herokuapp.com/drinks";
 
 const AppContext = createContext();
 

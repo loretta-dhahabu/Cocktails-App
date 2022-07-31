@@ -1,4 +1,6 @@
 # COCKTAILS APP
+## Deployed Link
+https://cocktaildrinks.herokuapp.com/
 ## Description
 This is a Cocktail Application  that displays different varieties of Cocktails and their details i.e from name to being alcoholic or non-alcoholic,the ingredients used,glass used and the date the cocktail was modified. 
 It allows the user to such for there preferred drink on the search area as it filters the cocktails by name.

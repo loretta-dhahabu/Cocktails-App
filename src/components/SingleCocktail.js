@@ -93,7 +93,7 @@ function SingleCocktail({ onAddComment }) {
     function handleSubmit(event) {
       event.preventDefault();
 
-      fetch("http://localhost:3000/drinks", {
+      fetch("https://cocktaildrinks.herokuapp.com/drinks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
